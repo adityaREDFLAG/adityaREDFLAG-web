@@ -33,5 +33,6 @@ We may revise these Terms at any time. Your continued use of the Service after s
 8.2. Governing Law: These Terms are governed by the laws of place, and any disputes will be resolved in the courts of place.
 8.3. Contact Information: For any questions or concerns regarding these Terms, please contact us at our discord server.
 By using our Service, you agree to abide by these Terms. If you do not agree with any of these terms, please do not use our Service.
+
 ​
-[Want to go to the main website?](https://zono.xyz.wf/)
+[Want to go to the main website?](https://zono.xyz.wf/) yeah
