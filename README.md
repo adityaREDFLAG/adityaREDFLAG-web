@@ -4,6 +4,7 @@
 
 # Domains
 https://adityaredflag.lol/ (main)
-https://noblixzy.sh.gg/ (back-up)
+https://noblixzy.sh.gg/ (back-up github) 
+https://noblixzy.js.cool/ (main 2)
 
 # Made in Astro :)
