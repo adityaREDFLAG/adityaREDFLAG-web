@@ -4,6 +4,6 @@
 
 # Domains
 https://adityaredflag.lol/ (main)
-https://noblixzy.vercel.app/ (back-up)
+https://noblixzy.sh.gg/ (back-up)
 
 # Made in Astro :)
