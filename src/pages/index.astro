@@ -1,27 +1,28 @@
+---
 import Layout from "../layouts/Layout.astro";
+---
 
 <Layout title="noblixzy">
-  <main class="flex justify-center items-center min-h-screen px-4 bg-gradient-to-b from-gray-800 to-black">
-    <div class="text-center space-y-8">
-
-      <h1 class="text-7xl font-semibold mb-8">
-        <span class="text-gray-300">Nobli</span><span class="text-red-400">xzy</span>
+  <main class="flex justify-center h-screen items-center px-4 bg-black">
+    <div class="text-center">
+      <h1 class="text-7xl font-bold mb-10">
+        <span class="text-gray-300 nermy">Nobli</span><span class="text-red-400 nermy">xzy</span>
       </h1>
-
-      <div class="instructions bg-neutral-900 max-w-3xl border border-neutral-800 rounded-lg p-6">
-        <p class="text-lg font-bold text-gray-200">
-          Ahoy! My name is noblixzy, and I am a YouTuber and a Discord bot developer who uses aoi.js.
+      
+      <div class="instructions bg-neutral-900 max-w-3xl border border-neutral-800 shadow-lg">
+        <p class="text-lg font-bold text-gray-200 mt-4">
+          Ahoy! My name is noblixzy and I am a YouTuber and a Discord bot developer using aoi.js.
         </p>
-      </div>
-
-      <div class="text-gray-400 text-2xl flex flex-wrap justify-center gap-6 mt-8">
-        <a class="hover:text-gray-300 transition duration-75" href="https://youtube.com/@adityaredflag">YouTube</a>
-        <a class="hover:text-gray-300 transition duration-75" href="https://www.roblox.com/users/3507400125/profile">Roblox</a>
-        <a class="hover:text-gray-300 transition duration-75" href="https://twitter.com/adityaREDFLAG">Twitter</a>
-        <a class="hover:text-gray-300 transition duration-75" href="https://github.com/adityaREDFLAG">GitHub</a>
-        <a class="hover:text-gray-300 transition duration-75" href="https://discord.com/invite/N9KD7au6hB">Discord</a>
-        <a class="hover:text-gray-300 transition duration-75" href="https://www.instagram.com/noblixzy/">Instagram</a>
-        <a class="hover:text-gray-300 transition duration-75" href="mailto:adi.redflag@gmail.com">Mail</a>
+        
+        <div class="text-gray-400 text-2xl mt-8 flex flex-wrap justify-center space-x-4 border-t border-neutral-800 pt-6">
+          <a class="hover:text-gray-300 transition duration-150" href="https://youtube.com/@adityaredflag">YouTube</a>
+          <a class="hover:text-gray-300 transition duration-150" href="https://www.roblox.com/users/3507400125/profile">Roblox</a>
+          <a class="hover:text-gray-300 transition duration-150" href="https://twitter.com/adityaREDFLAG">Twitter</a>
+          <a class="hover:text-gray-300 transition duration-150" href="https://github.com/adityaREDFLAG">GitHub</a>
+          <a class="hover:text-gray-300 transition duration-150" href="https://discord.com/invite/N9KD7au6hB">Discord</a>
+          <a class="hover:text-gray-300 transition duration-150" href="https://www.instagram.com/noblixzy/">Instagram</a>
+          <a class="hover:text-gray-300 transition duration-150" href="mailto:adi.redflag@gmail.com">Mail</a>
+        </div>
       </div>
     </div>
   </main>
@@ -34,15 +35,11 @@ import Layout from "../layouts/Layout.astro";
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
   }
-
   .instructions {
     padding: 1.5rem;
-    border-radius: 0.5rem;
+    border-radius: 8px;
   }
-
   .instructions p {
-    font-size: 1rem;
-    font-weight: bold;
-    color: #ddd;
+    margin: 0;
   }
 </style>
