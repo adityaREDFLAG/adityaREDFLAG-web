@@ -1,57 +1,45 @@
 ---
-interface Props {
-	title: string;
-}
-
-const { title } = Astro.props;
+import Layout from "../layouts/Layout.astro";
 ---
+<Layout title="noblixzy">
+  <main class="flex justify-center h-screen items-center px-4 bg-black">
+    <div class="text-center">
+      <h1 class="text-7xl font-bold mb-10">
+        <span class="text-gray-300 nermy">Nobli</span><span class="text-red-400 nermy">xzy</span>
+      </h1>
+      
+      <div class="instructions bg-neutral-900 max-w-3xl border border-neutral-800 shadow-lg">
+        <p class="text-lg font-bold text-gray-200 mt-4">
+          Ahoy! My name is noblixzy and I am a YouTuber and a Discord bot developer using aoi.js.
+        </p>
+        
+        <div class="text-gray-400 text-2xl mt-8 flex flex-wrap justify-center space-x-4 border-t border-neutral-800 pt-6">
+          <a class="hover:text-gray-300 transition duration-150" href="https://youtube.com/@adityaredflag">YouTube</a>
+          <a class="hover:text-gray-300 transition duration-150" href="https://www.roblox.com/users/3507400125/profile">Roblox</a>
+          <a class="hover:text-gray-300 transition duration-150" href="https://twitter.com/adityaREDFLAG">Twitter</a>
+          <a class="hover:text-gray-300 transition duration-150" href="https://github.com/adityaREDFLAG">GitHub</a>
+          <a class="hover:text-gray-300 transition duration-150" href="https://discord.com/invite/N9KD7au6hB">Discord</a>
+          <a class="hover:text-gray-300 transition duration-150" href="https://www.instagram.com/noblixzy/">Instagram</a>
+          <a class="hover:text-gray-300 transition duration-150" href="mailto:adi.redflag@gmail.com">Mail</a>
+        </div>
+      </div>
+    </div>
+  </main>
+</Layout>
 
-<!doctype html>
-<html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="description" content="Official Site Of adityaredflag aka Noblixzy" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.ico" />
-		<meta name="generator" content={Astro.generator} />
-		<title>{title}</title>
-	</head>
-	<body>
-		<slot />
-	</body>
-</html>
-<style is:global>
-	:root {
-		--accent: 136, 58, 234;
-		--accent-light: 224, 204, 250;
-		--accent-dark: 49, 10, 101;
-		--accent-gradient: linear-gradient(
-			45deg,
-			rgb(var(--accent)),
-			rgb(var(--accent-light)) 30%,
-			white 60%
-		);
-	}
-	html {
-		font-family: system-ui, sans-serif;
-		background: #151515;
-		background-size: 224px;
-	}
-	code {
-		font-family:
-			Menlo,
-			Monaco,
-			Lucida Console,
-			Liberation Mono,
-			DejaVu Sans Mono,
-			Bitstream Vera Sans Mono,
-			Courier New,
-			monospace;
-	}
-
-	body {
-		  background-size: 70px 70px;
-  background-image: linear-gradient(to right, rgb(37, 37, 37) 0.5px, transparent 0.5px),
-    linear-gradient(to bottom, rgb(37, 37, 37) 0.5px, transparent 0.5px);
-	}
+<style>
+  .nermy {
+    background: linear-gradient(180deg, #6C6C6C 0%, #040711 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  .instructions {
+    padding: 1.5rem;
+    border-radius: 8px;
+  }
+  .instructions p {
+    margin: 0;
+  }
 </style>
+
