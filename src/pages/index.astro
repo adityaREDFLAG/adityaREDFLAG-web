@@ -4,28 +4,52 @@ import Layout from "../layouts/Layout.astro";
 
 <Layout title="Aditya">
   <main class="flex justify-center h-screen items-center px-4 bg-black">
-    <div class="text-center">
+    <div class="text-center animate-fade-in">
       <h1 class="text-7xl font-bold mb-10">
-        <span class="text-gray-300 nermy">Adi</span><span class="text-red-400 nermy">tya</span>
+        <span class="text-gray-300 nermy">Ad</span><span class="text-red-400 nermy">itya</span>
       </h1>
       
       <div class="instructions bg-neutral-900 max-w-3xl border border-neutral-800 shadow-lg">
         <p class="text-lg font-bold text-gray-200 mt-4">
-          Hello, I am Aditya!
+          Hi!
         </p>
         
         <div class="text-gray-400 text-2xl mt-8 flex flex-wrap justify-center space-x-4 border-t border-neutral-800 pt-6">
-          <a class="hover:text-gray-300 transition duration-150" href="https://youtube.com/@adityaredflag">YouTube</a>
-          <a class="hover:text-gray-300 transition duration-150" href="https://www.roblox.com/users/3507400125/profile">Roblox</a>
-          <a class="hover:text-gray-300 transition duration-150" href="https://twitter.com/adityaREDFLAG">Twitter</a>
-          <a class="hover:text-gray-300 transition duration-150" href="https://github.com/adityaREDFLAG">GitHub</a>
-          <a class="hover:text-gray-300 transition duration-150" href="https://discord.com/invite/N9KD7au6hB">Discord</a>
-          <a class="hover:text-gray-300 transition duration-150" href="https://www.instagram.com/imreallyadi/">Instagram</a>
-          <a class="hover:text-gray-300 transition duration-150" href="mailto:adi.redflag@gmail.com">Mail</a>
+          <a class="hover:text-gray-300 transition duration-150 flex items-center space-x-2" href="https://youtube.com/@adityaredflag">
+            <i class="fab fa-youtube w-6 h-6"></i>
+            <span>YouTube</span>
+          </a>
+          <a class="hover:text-gray-300 transition duration-150 flex items-center space-x-2" href="https://www.roblox.com/users/3507400125/profile">
+            <i class="fas fa-gamepad w-6 h-6"></i>
+            <span>Roblox</span>
+          </a>
+          <a class="hover:text-gray-300 transition duration-150 flex items-center space-x-2" href="https://twitter.com/adityaREDFLAG">
+            <i class="fab fa-twitter w-6 h-6"></i>
+            <span>Twitter</span>
+          </a>
+          <a class="hover:text-gray-300 transition duration-150 flex items-center space-x-2" href="https://github.com/adityaREDFLAG">
+            <i class="fab fa-github w-6 h-6"></i>
+            <span>GitHub</span>
+          </a>
+          <a class="hover:text-gray-300 transition duration-150 flex items-center space-x-2" href="https://discord.com/invite/N9KD7au6hB">
+            <i class="fab fa-discord w-6 h-6"></i>
+            <span>Discord</span>
+          </a>
+          <a class="hover:text-gray-300 transition duration-150 flex items-center space-x-2" href="https://www.instagram.com/noblixzy/">
+            <i class="fab fa-instagram w-6 h-6"></i>
+            <span>Instagram</span>
+          </a>
+          <a class="hover:text-gray-300 transition duration-150 flex items-center space-x-2" href="mailto:adi.redflag@gmail.com">
+            <i class="fas fa-envelope w-6 h-6"></i>
+            <span>Mail</span>
+          </a>
         </div>
       </div>
     </div>
   </main>
+
+  <!-- Font Awesome CDN ;) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </Layout>
 
 <style>
@@ -41,5 +65,18 @@ import Layout from "../layouts/Layout.astro";
   }
   .instructions p {
     margin: 0;
+  }
+  .animate-fade-in {
+    animation: fadeIn 1s ease-in-out;
+  }
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(-20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
   }
 </style>
