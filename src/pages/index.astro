@@ -2,67 +2,58 @@
 import Layout from "../layouts/Layout.astro";
 ---
 
-<Layout title="Aditya's Site">
+<Layout title="Aditya">
   <main class="flex justify-center h-screen items-center px-4 bg-black">
     <div class="text-center">
       <h1 class="text-7xl font-bold mb-10">
         <span class="text-gray-300 nermy">Aditya</span>
       </h1>
-
-      <p class="text-lg font-semibold text-gray-400 mb-6">Hi!</p>
-
-      <div class="instructions bg-neutral-900 max-w-3xl border border-neutral-800 shadow-lg p-6 rounded-lg">
-        <div class="flex justify-center space-x-8">
-          <a class="icon-link" href="https://youtube.com/@adityaredflag">
-            <img src="/icons/youtube.svg" alt="YouTube" class="icon"/>
+      
+      <div class="instructions bg-neutral-900 max-w-3xl border border-neutral-800 shadow-lg">
+        <p class="text-lg font-bold text-gray-200 mt-4">
+          Hi!
+        </p>
+        
+        <div class="flex flex-wrap justify-center mt-8 space-x-4 border-t border-neutral-800 pt-6">
+          <!-- Logos with hover effects showing names -->
+          <a class="social-link hover-effect" href="https://youtube.com/@adityaredflag" aria-label="YouTube">
+            <img src="path/to/youtube-logo.png" alt="YouTube" class="icon">
             <span class="link-name">YouTube</span>
           </a>
-          <a class="icon-link" href="https://www.roblox.com/users/3507400125/profile">
-            <img src="/icons/roblox.svg" alt="Roblox" class="icon"/>
+          <a class="social-link hover-effect" href="https://www.roblox.com/users/3507400125/profile" aria-label="Roblox">
+            <img src="path/to/roblox-logo.png" alt="Roblox" class="icon">
             <span class="link-name">Roblox</span>
           </a>
-          <a class="icon-link" href="https://twitter.com/adityaREDFLAG">
-            <img src="/icons/twitter.svg" alt="Twitter" class="icon"/>
+          <a class="social-link hover-effect" href="https://twitter.com/adityaREDFLAG" aria-label="Twitter">
+            <img src="path/to/twitter-logo.png" alt="Twitter" class="icon">
             <span class="link-name">Twitter</span>
           </a>
-          <a class="icon-link" href="https://github.com/adityaREDFLAG">
-            <img src="/icons/github.svg" alt="GitHub" class="icon"/>
+          <a class="social-link hover-effect" href="https://github.com/adityaREDFLAG" aria-label="GitHub">
+            <img src="path/to/github-logo.png" alt="GitHub" class="icon">
             <span class="link-name">GitHub</span>
           </a>
-          <a class="icon-link" href="https://discord.com/invite/N9KD7au6hB">
-            <img src="/icons/discord.svg" alt="Discord" class="icon"/>
+          <a class="social-link hover-effect" href="https://discord.com/invite/N9KD7au6hB" aria-label="Discord">
+            <img src="path/to/discord-logo.png" alt="Discord" class="icon">
             <span class="link-name">Discord</span>
           </a>
-          <a class="icon-link" href="https://www.instagram.com/noblixzy/">
-            <img src="/icons/instagram.svg" alt="Instagram" class="icon"/>
+          <a class="social-link hover-effect" href="https://www.instagram.com/noblixzy/" aria-label="Instagram">
+            <img src="path/to/instagram-logo.png" alt="Instagram" class="icon">
             <span class="link-name">Instagram</span>
           </a>
-          <a class="icon-link" href="mailto:adi.redflag@gmail.com">
-            <img src="/icons/email.svg" alt="Email" class="icon"/>
+          <a class="social-link hover-effect" href="mailto:adi.redflag@gmail.com" aria-label="Email">
+            <img src="path/to/email-logo.png" alt="Mail" class="icon">
             <span class="link-name">Mail</span>
           </a>
         </div>
-        
-        <!-- Spotify Player -->
-        <iframe style="margin-top: 20px" src="https://open.spotify.com/track/5ovfCCeu5FtY6jf5Yk2huD?si=b53339d4e5ed470a" width="300" height="80" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+
+        <!-- Spotify song embed -->
+        <div class="spotify mt-8">
+          <iframe src="https://open.spotify.com/embed/playlist/0LvYmZs7u4gUEh2e1z7Yk3" width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+        </div>
       </div>
     </div>
   </main>
 </Layout>
-
-<script>
-  let spaceCounter = 0;
-  window.addEventListener('keydown', function(e) {
-    if (e.code === 'Space') {
-      spaceCounter++;
-      if (spaceCounter === 5) {
-        // Trigger Dino or Flappy Bird game
-        document.querySelector('.instructions').innerHTML = `<iframe src="https://chromedino.com/" width="600" height="400"></iframe>`;
-        spaceCounter = 0;
-      }
-    }
-  });
-</script>
 
 <style>
   .nermy {
@@ -71,41 +62,41 @@ import Layout from "../layouts/Layout.astro";
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
   }
-
+  
   .instructions {
     padding: 1.5rem;
     border-radius: 8px;
   }
 
-  .icon-link {
-    position: relative;
+  .social-link {
     display: inline-block;
-    transition: transform 0.3s ease-in-out;
+    text-align: center;
+    margin: 0 1rem;
   }
-
+  
   .icon {
     width: 40px;
     height: 40px;
-    filter: grayscale(100%);
-    transition: filter 0.3s ease-in-out;
+    transition: transform 0.3s ease;
   }
-
+  
   .link-name {
-    opacity: 0;
-    transition: opacity 0.3s ease-in-out;
-    position: absolute;
-    top: 50px;
-    left: 50%;
-    transform: translateX(-50%);
-    font-size: 14px;
+    display: none;
+    margin-top: 0.5rem;
     color: #fff;
+    font-size: 1rem;
+  }
+  
+  .hover-effect:hover .icon {
+    transform: scale(1.2);
+  }
+  
+  .hover-effect:hover .link-name {
+    display: block;
   }
 
-  .icon-link:hover .icon {
-    filter: grayscale(0%);
-  }
-
-  .icon-link:hover .link-name {
-    opacity: 1;
+  .spotify {
+    margin-top: 20px;
+    text-align: center;
   }
 </style>
