@@ -13,38 +13,39 @@ import Layout from "../layouts/Layout.astro";
         <p class="text-lg font-bold text-gray-200 mt-4">
           Hi!
         </p>
-        
+
         <div class="text-gray-400 text-2xl mt-8 flex flex-wrap justify-center space-x-4 border-t border-neutral-800 pt-6">
+          <!-- Logo Links with Hover Animation for Text -->
           <a class="hover:text-gray-300 transition duration-150 flex items-center space-x-2 link-animate" href="https://youtube.com/@adityaredflag">
-            <i class="fab fa-youtube w-6 h-6"></i>
-            <span>YouTube</span>
+            <i class="fab fa-youtube logo"></i>
+            <span class="hidden-text">YouTube</span>
           </a>
           <a class="hover:text-gray-300 transition duration-150 flex items-center space-x-2 link-animate" href="https://www.roblox.com/users/3507400125/profile">
-            <i class="fas fa-gamepad w-6 h-6"></i>
-            <span>Roblox</span>
+            <i class="fas fa-gamepad logo"></i>
+            <span class="hidden-text">Roblox</span>
           </a>
           <a class="hover:text-gray-300 transition duration-150 flex items-center space-x-2 link-animate" href="https://twitter.com/adityaREDFLAG">
-            <i class="fab fa-twitter w-6 h-6"></i>
-            <span>Twitter</span>
+            <i class="fab fa-twitter logo"></i>
+            <span class="hidden-text">Twitter</span>
           </a>
           <a class="hover:text-gray-300 transition duration-150 flex items-center space-x-2 link-animate" href="https://github.com/adityaREDFLAG">
-            <i class="fab fa-github w-6 h-6"></i>
-            <span>GitHub</span>
+            <i class="fab fa-github logo"></i>
+            <span class="hidden-text">GitHub</span>
           </a>
           <a class="hover:text-gray-300 transition duration-150 flex items-center space-x-2 link-animate" href="https://discord.com/invite/N9KD7au6hB">
-            <i class="fab fa-discord w-6 h-6"></i>
-            <span>Discord</span>
+            <i class="fab fa-discord logo"></i>
+            <span class="hidden-text">Discord</span>
           </a>
           <a class="hover:text-gray-300 transition duration-150 flex items-center space-x-2 link-animate" href="https://www.instagram.com/noblixzy/">
-            <i class="fab fa-instagram w-6 h-6"></i>
-            <span>Instagram</span>
+            <i class="fab fa-instagram logo"></i>
+            <span class="hidden-text">Instagram</span>
           </a>
           <a class="hover:text-gray-300 transition duration-150 flex items-center space-x-2 link-animate" href="mailto:adi.redflag@gmail.com">
-            <i class="fas fa-envelope w-6 h-6"></i>
-            <span>Mail</span>
+            <i class="fas fa-envelope logo"></i>
+            <span class="hidden-text">Mail</span>
           </a>
         </div>
-        <p id="easter-egg" class="text-green-400 hidden mt-4">You found the Easter egg! 🥚</p>
+        <canvas id="gameCanvas" class="hidden mt-4"></canvas> <!-- Hidden game canvas -->
       </div>
     </div>
   </main>
@@ -84,23 +85,100 @@ import Layout from "../layouts/Layout.astro";
     position: relative;
     transition: transform 0.2s ease, color 0.2s ease;
   }
-  .link-animate:hover {
+  .link-animate:hover .hidden-text {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  .hidden-text {
+    opacity: 0;
+    transform: translateY(10px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+  }
+  .logo {
+    font-size: 2rem;
+    transition: transform 0.2s ease;
+  }
+  .link-animate:hover .logo {
     transform: scale(1.1);
-    color: #e91e63; /* Change color on hover */
+    color: #e91e63;
+  }
+  #gameCanvas {
+    width: 400px;
+    height: 300px;
+    background: #fff;
+    border: 2px solid #333;
   }
 </style>
 
 <script>
   let spaceCount = 0;
-  
+  let tapCount = 0;
+  let gameStarted = false;
+
+  // Detect spacebar or tap presses
   document.addEventListener('keydown', (event) => {
     if (event.code === 'Space') {
       spaceCount++;
-      if (spaceCount === 4) {
-        document.getElementById('easter-egg').classList.remove('hidden');
-      }
-    } else {
-      spaceCount = 0; // Reset if any other key is pressed
+      checkGameStart();
     }
   });
+  
+  document.addEventListener('click', () => {
+    tapCount++;
+    checkGameStart();
+  });
+
+  function checkGameStart() {
+    if (spaceCount >= 5 || tapCount >= 5) {
+      startGame();
+    }
+  }
+
+  function startGame() {
+    if (!gameStarted) {
+      gameStarted = true;
+      document.getElementById('gameCanvas').classList.remove('hidden');
+      runFlappyBirdGame();
+    }
+  }
+
+  function runFlappyBirdGame() {
+    // Example implementation for a basic Flappy Bird game
+    const canvas = document.getElementById('gameCanvas');
+    const ctx = canvas.getContext('2d');
+    
+    let birdY = canvas.height / 2;
+    let gravity = 0.6;
+    let lift = -10;
+    let velocity = 0;
+
+    function draw() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      ctx.fillStyle = '#000';
+      ctx.fillRect(50, birdY, 20, 20);
+
+      velocity += gravity;
+      birdY += velocity;
+
+      if (birdY > canvas.height || birdY < 0) {
+        birdY = canvas.height / 2; // Reset position if the bird hits the top or bottom
+        velocity = 0;
+      }
+
+      requestAnimationFrame(draw);
+    }
+
+    draw();
+
+    // Make the bird "jump" on spacebar or tap
+    document.addEventListener('keydown', (event) => {
+      if (event.code === 'Space') {
+        velocity = lift;
+      }
+    });
+
+    document.addEventListener('click', () => {
+      velocity = lift;
+    });
+  }
 </script>
