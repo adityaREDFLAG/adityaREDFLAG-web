@@ -3,100 +3,126 @@ import Layout from "../layouts/Layout.astro";
 ---
 
 <Layout title="Aditya">
-  <main class="flex justify-center h-screen items-center px-4 bg-black">
-    <div class="text-center">
+  <main class="flex justify-center h-screen items-center px-4 bg-gradient-to-b from-black to-gray-800">
+    <div class="text-center animate-fade-in">
       <h1 class="text-7xl font-bold mb-10">
-        <span class="text-gray-300 nermy">Aditya</span>
+        <span class="text-gray-300 nermy">Ad</span><span class="text-red-400 nermy">itya</span>
       </h1>
-      
-      <div class="instructions bg-neutral-900 max-w-3xl border border-neutral-800 shadow-lg">
-        <p class="text-lg font-bold text-gray-200 mt-4">
+
+      <div class="instructions bg-neutral-900 max-w-3xl border border-neutral-800 shadow-lg p-6 rounded-lg">
+        <p class="text-lg font-bold text-gray-200">
           Hi!
         </p>
-        
-        <div class="flex flex-wrap justify-center mt-8 space-x-4 border-t border-neutral-800 pt-6">
-          <!-- Logos with hover effects showing names -->
-          <a class="social-link hover-effect" href="https://youtube.com/@adityaredflag" aria-label="YouTube">
-            <img src="path/to/youtube-logo.png" alt="YouTube" class="icon">
-            <span class="link-name">YouTube</span>
+
+        <!-- Social Links with hover effect and icon animation -->
+        <div class="text-gray-400 text-2xl mt-8 flex flex-wrap justify-center space-x-6 border-t border-neutral-800 pt-6">
+          <a class="hover:text-gray-300 transition duration-300 flex items-center space-x-2 link-animate" href="https://youtube.com/@adityaredflag">
+            <i class="fab fa-youtube w-6 h-6"></i>
+            <span>YouTube</span>
           </a>
-          <a class="social-link hover-effect" href="https://www.roblox.com/users/3507400125/profile" aria-label="Roblox">
-            <img src="path/to/roblox-logo.png" alt="Roblox" class="icon">
-            <span class="link-name">Roblox</span>
+          <a class="hover:text-gray-300 transition duration-300 flex items-center space-x-2 link-animate" href="https://www.roblox.com/users/3507400125/profile">
+            <i class="fas fa-gamepad w-6 h-6"></i>
+            <span>Roblox</span>
           </a>
-          <a class="social-link hover-effect" href="https://twitter.com/adityaREDFLAG" aria-label="Twitter">
-            <img src="path/to/twitter-logo.png" alt="Twitter" class="icon">
-            <span class="link-name">Twitter</span>
+          <a class="hover:text-gray-300 transition duration-300 flex items-center space-x-2 link-animate" href="https://twitter.com/adityaREDFLAG">
+            <i class="fab fa-twitter w-6 h-6"></i>
+            <span>Twitter</span>
           </a>
-          <a class="social-link hover-effect" href="https://github.com/adityaREDFLAG" aria-label="GitHub">
-            <img src="path/to/github-logo.png" alt="GitHub" class="icon">
-            <span class="link-name">GitHub</span>
+          <a class="hover:text-gray-300 transition duration-300 flex items-center space-x-2 link-animate" href="https://github.com/adityaREDFLAG">
+            <i class="fab fa-github w-6 h-6"></i>
+            <span>GitHub</span>
           </a>
-          <a class="social-link hover-effect" href="https://discord.com/invite/N9KD7au6hB" aria-label="Discord">
-            <img src="path/to/discord-logo.png" alt="Discord" class="icon">
-            <span class="link-name">Discord</span>
+          <a class="hover:text-gray-300 transition duration-300 flex items-center space-x-2 link-animate" href="https://discord.com/invite/N9KD7au6hB">
+            <i class="fab fa-discord w-6 h-6"></i>
+            <span>Discord</span>
           </a>
-          <a class="social-link hover-effect" href="https://www.instagram.com/noblixzy/" aria-label="Instagram">
-            <img src="path/to/instagram-logo.png" alt="Instagram" class="icon">
-            <span class="link-name">Instagram</span>
+          <a class="hover:text-gray-300 transition duration-300 flex items-center space-x-2 link-animate" href="https://www.instagram.com/noblixzy/">
+            <i class="fab fa-instagram w-6 h-6"></i>
+            <span>Instagram</span>
           </a>
-          <a class="social-link hover-effect" href="mailto:adi.redflag@gmail.com" aria-label="Email">
-            <img src="path/to/email-logo.png" alt="Mail" class="icon">
-            <span class="link-name">Mail</span>
+          <a class="hover:text-gray-300 transition duration-300 flex items-center space-x-2 link-animate" href="mailto:adi.redflag@gmail.com">
+            <i class="fas fa-envelope w-6 h-6"></i>
+            <span>Mail</span>
           </a>
         </div>
 
-        <!-- Spotify song embed -->
-        <div class="spotify mt-8">
-          <iframe src="https://open.spotify.com/embed/playlist/0LvYmZs7u4gUEh2e1z7Yk3" width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
-        </div>
+        <!-- Easter egg text -->
+        <p id="easter-egg" class="text-green-400 hidden mt-4">You found the Easter egg! 🥚</p>
+      </div>
+
+      <!-- Spotify playlist embed -->
+      <div class="spotify mt-8">
+        <iframe src="https://open.spotify.com/embed/playlist/0LvYmZs7u4gUEh2e1z7Yk3" width="300" height="380" frameborder="0" allow="encrypted-media"></iframe>
       </div>
     </div>
   </main>
+
+  <!-- Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </Layout>
 
 <style>
+  /* Fancy text gradient */
   .nermy {
-    background: linear-gradient(180deg, #6C6C6C 0%, #040711 100%);
+    background: linear-gradient(180deg, #A5A5A5 0%, #282828 100%);
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
   }
-  
+
   .instructions {
     padding: 1.5rem;
-    border-radius: 8px;
+    border-radius: 10px;
+    box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.5);
   }
 
-  .social-link {
-    display: inline-block;
-    text-align: center;
-    margin: 0 1rem;
+  /* Fade-in animation for smooth load */
+  .animate-fade-in {
+    animation: fadeIn 1.5s ease-in-out;
   }
-  
-  .icon {
-    width: 40px;
-    height: 40px;
-    transition: transform 0.3s ease;
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(-30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
   }
-  
-  .link-name {
-    display: none;
-    margin-top: 0.5rem;
-    color: #fff;
-    font-size: 1rem;
+
+  /* Link hover animation for a smoother scale effect */
+  .link-animate {
+    transition: transform 0.3s ease, color 0.3s ease;
   }
-  
-  .hover-effect:hover .icon {
-    transform: scale(1.2);
+
+  .link-animate:hover {
+    transform: scale(1.1);
+    color: #00FFB5; /* Highlight color on hover */
   }
-  
-  .hover-effect:hover .link-name {
-    display: block;
+
+  /* Easter egg text styling */
+  #easter-egg {
+    font-size: 1.25rem;
   }
 
   .spotify {
-    margin-top: 20px;
     text-align: center;
   }
 </style>
+
+<script>
+  let spaceCount = 0;
+
+  document.addEventListener('keydown', (event) => {
+    if (event.code === 'Space') {
+      spaceCount++;
+      if (spaceCount === 4) {
+        document.getElementById('easter-egg').classList.remove('hidden');
+      }
+    } else {
+      spaceCount = 0; // Reset counter for non-space keys
+    }
+  });
+</script>
