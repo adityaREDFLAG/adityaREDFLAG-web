@@ -2,57 +2,67 @@
 import Layout from "../layouts/Layout.astro";
 ---
 
-<Layout title="Aditya">
+<Layout title="Aditya's Site">
   <main class="flex justify-center h-screen items-center px-4 bg-black">
-    <div class="text-center animate-fade-in">
+    <div class="text-center">
       <h1 class="text-7xl font-bold mb-10">
-        <span class="text-gray-300 nermy">Ad</span><span class="text-red-400 nermy">itya</span>
+        <span class="text-gray-300 nermy">Aditya</span>
       </h1>
-      
-      <div class="instructions bg-neutral-900 max-w-3xl border border-neutral-800 shadow-lg">
-        <p class="text-lg font-bold text-gray-200 mt-4">
-          Hi!
-        </p>
 
-        <div class="text-gray-400 text-2xl mt-8 flex flex-wrap justify-center space-x-4 border-t border-neutral-800 pt-6">
-          <!-- Logo Links with Hover Animation for Text -->
-          <a class="hover:text-gray-300 transition duration-150 flex items-center space-x-2 link-animate" href="https://youtube.com/@adityaredflag">
-            <i class="fab fa-youtube logo"></i>
-            <span class="hidden-text">YouTube</span>
+      <p class="text-lg font-semibold text-gray-400 mb-6">Hi!</p>
+
+      <div class="instructions bg-neutral-900 max-w-3xl border border-neutral-800 shadow-lg p-6 rounded-lg">
+        <div class="flex justify-center space-x-8">
+          <a class="icon-link" href="https://youtube.com/@adityaredflag">
+            <img src="/icons/youtube.svg" alt="YouTube" class="icon"/>
+            <span class="link-name">YouTube</span>
           </a>
-          <a class="hover:text-gray-300 transition duration-150 flex items-center space-x-2 link-animate" href="https://www.roblox.com/users/3507400125/profile">
-            <i class="fas fa-gamepad logo"></i>
-            <span class="hidden-text">Roblox</span>
+          <a class="icon-link" href="https://www.roblox.com/users/3507400125/profile">
+            <img src="/icons/roblox.svg" alt="Roblox" class="icon"/>
+            <span class="link-name">Roblox</span>
           </a>
-          <a class="hover:text-gray-300 transition duration-150 flex items-center space-x-2 link-animate" href="https://twitter.com/adityaREDFLAG">
-            <i class="fab fa-twitter logo"></i>
-            <span class="hidden-text">Twitter</span>
+          <a class="icon-link" href="https://twitter.com/adityaREDFLAG">
+            <img src="/icons/twitter.svg" alt="Twitter" class="icon"/>
+            <span class="link-name">Twitter</span>
           </a>
-          <a class="hover:text-gray-300 transition duration-150 flex items-center space-x-2 link-animate" href="https://github.com/adityaREDFLAG">
-            <i class="fab fa-github logo"></i>
-            <span class="hidden-text">GitHub</span>
+          <a class="icon-link" href="https://github.com/adityaREDFLAG">
+            <img src="/icons/github.svg" alt="GitHub" class="icon"/>
+            <span class="link-name">GitHub</span>
           </a>
-          <a class="hover:text-gray-300 transition duration-150 flex items-center space-x-2 link-animate" href="https://discord.com/invite/N9KD7au6hB">
-            <i class="fab fa-discord logo"></i>
-            <span class="hidden-text">Discord</span>
+          <a class="icon-link" href="https://discord.com/invite/N9KD7au6hB">
+            <img src="/icons/discord.svg" alt="Discord" class="icon"/>
+            <span class="link-name">Discord</span>
           </a>
-          <a class="hover:text-gray-300 transition duration-150 flex items-center space-x-2 link-animate" href="https://www.instagram.com/noblixzy/">
-            <i class="fab fa-instagram logo"></i>
-            <span class="hidden-text">Instagram</span>
+          <a class="icon-link" href="https://www.instagram.com/noblixzy/">
+            <img src="/icons/instagram.svg" alt="Instagram" class="icon"/>
+            <span class="link-name">Instagram</span>
           </a>
-          <a class="hover:text-gray-300 transition duration-150 flex items-center space-x-2 link-animate" href="mailto:adi.redflag@gmail.com">
-            <i class="fas fa-envelope logo"></i>
-            <span class="hidden-text">Mail</span>
+          <a class="icon-link" href="mailto:adi.redflag@gmail.com">
+            <img src="/icons/email.svg" alt="Email" class="icon"/>
+            <span class="link-name">Mail</span>
           </a>
         </div>
-        <canvas id="gameCanvas" class="hidden mt-4"></canvas> <!-- Hidden game canvas -->
+        
+        <!-- Spotify Player -->
+        <iframe style="margin-top: 20px" src="https://open.spotify.com/track/5ovfCCeu5FtY6jf5Yk2huD?si=b53339d4e5ed470a" width="300" height="80" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
       </div>
     </div>
   </main>
-
-  <!-- Font Awesome CDN Link -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </Layout>
+
+<script>
+  let spaceCounter = 0;
+  window.addEventListener('keydown', function(e) {
+    if (e.code === 'Space') {
+      spaceCounter++;
+      if (spaceCounter === 5) {
+        // Trigger Dino or Flappy Bird game
+        document.querySelector('.instructions').innerHTML = `<iframe src="https://chromedino.com/" width="600" height="400"></iframe>`;
+        spaceCounter = 0;
+      }
+    }
+  });
+</script>
 
 <style>
   .nermy {
@@ -61,124 +71,41 @@ import Layout from "../layouts/Layout.astro";
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
   }
+
   .instructions {
     padding: 1.5rem;
     border-radius: 8px;
   }
-  .instructions p {
-    margin: 0;
-  }
-  .animate-fade-in {
-    animation: fadeIn 1s ease-in-out;
-  }
-  @keyframes fadeIn {
-    from {
-      opacity: 0;
-      transform: translateY(-20px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-  .link-animate {
+
+  .icon-link {
     position: relative;
-    transition: transform 0.2s ease, color 0.2s ease;
+    display: inline-block;
+    transition: transform 0.3s ease-in-out;
   }
-  .link-animate:hover .hidden-text {
-    opacity: 1;
-    transform: translateY(0);
+
+  .icon {
+    width: 40px;
+    height: 40px;
+    filter: grayscale(100%);
+    transition: filter 0.3s ease-in-out;
   }
-  .hidden-text {
+
+  .link-name {
     opacity: 0;
-    transform: translateY(10px);
-    transition: opacity 0.3s ease, transform 0.3s ease;
+    transition: opacity 0.3s ease-in-out;
+    position: absolute;
+    top: 50px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 14px;
+    color: #fff;
   }
-  .logo {
-    font-size: 2rem;
-    transition: transform 0.2s ease;
+
+  .icon-link:hover .icon {
+    filter: grayscale(0%);
   }
-  .link-animate:hover .logo {
-    transform: scale(1.1);
-    color: #e91e63;
-  }
-  #gameCanvas {
-    width: 400px;
-    height: 300px;
-    background: #fff;
-    border: 2px solid #333;
+
+  .icon-link:hover .link-name {
+    opacity: 1;
   }
 </style>
-
-<script>
-  let spaceCount = 0;
-  let tapCount = 0;
-  let gameStarted = false;
-
-  // Detect spacebar or tap presses
-  document.addEventListener('keydown', (event) => {
-    if (event.code === 'Space') {
-      spaceCount++;
-      checkGameStart();
-    }
-  });
-  
-  document.addEventListener('click', () => {
-    tapCount++;
-    checkGameStart();
-  });
-
-  function checkGameStart() {
-    if (spaceCount >= 5 || tapCount >= 5) {
-      startGame();
-    }
-  }
-
-  function startGame() {
-    if (!gameStarted) {
-      gameStarted = true;
-      document.getElementById('gameCanvas').classList.remove('hidden');
-      runFlappyBirdGame();
-    }
-  }
-
-  function runFlappyBirdGame() {
-    // Example implementation for a basic Flappy Bird game
-    const canvas = document.getElementById('gameCanvas');
-    const ctx = canvas.getContext('2d');
-    
-    let birdY = canvas.height / 2;
-    let gravity = 0.6;
-    let lift = -10;
-    let velocity = 0;
-
-    function draw() {
-      ctx.clearRect(0, 0, canvas.width, canvas.height);
-      ctx.fillStyle = '#000';
-      ctx.fillRect(50, birdY, 20, 20);
-
-      velocity += gravity;
-      birdY += velocity;
-
-      if (birdY > canvas.height || birdY < 0) {
-        birdY = canvas.height / 2; // Reset position if the bird hits the top or bottom
-        velocity = 0;
-      }
-
-      requestAnimationFrame(draw);
-    }
-
-    draw();
-
-    // Make the bird "jump" on spacebar or tap
-    document.addEventListener('keydown', (event) => {
-      if (event.code === 'Space') {
-        velocity = lift;
-      }
-    });
-
-    document.addEventListener('click', () => {
-      velocity = lift;
-    });
-  }
-</script>
