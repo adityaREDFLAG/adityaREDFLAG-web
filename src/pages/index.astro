@@ -1,10 +1,11 @@
+
 ---
 import Layout from "../layouts/Layout.astro";
 ---
 
 <Layout title="Aditya's Trashyard">
   <!-- Loading Screen -->
-  <div class="loading-screen flex justify-center items-center h-screen w-screen bg-black text-white" id="loading-screen">
+  <div class="loading-screen flex justify-center items-center h-screen w-screen bg-black text-white fixed top-0 left-0 z-50" id="loading-screen">
     <div class="trash-can">
       <div class="lid"></div>
       <div class="body"></div>
@@ -12,7 +13,7 @@ import Layout from "../layouts/Layout.astro";
     <p class="loading-text">Dumping trash...</p>
   </div>
 
-  <main class="flex justify-center h-screen items-center px-4 bg-black text-white hidden" id="main-content">
+  <main class="flex justify-center h-screen items-center px-4 bg-black text-white relative" id="main-content">
     <div class="text-center animate-fade-in max-w-2xl mx-auto space-y-10">
       <!-- Heading Section -->
       <h1 class="text-7xl font-extrabold uppercase tracking-wide animate-text-glitch" style="font-family: 'Panic Stricken'">
@@ -72,7 +73,7 @@ import Layout from "../layouts/Layout.astro";
       position: fixed;
       top: 0;
       left: 0;
-      z-index: 1000;
+      z-index: 50;
     }
 
     .trash-can {
