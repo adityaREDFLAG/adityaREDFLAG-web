@@ -3,80 +3,134 @@ import Layout from "../layouts/Layout.astro";
 ---
 
 <Layout title="Aditya's Trashyard">
-  <main class="flex justify-center h-screen items-center px-4 bg-trashyard">
+  <main class="flex justify-center h-screen items-center px-4 bg-black text-white">
     <div class="text-center animate-fade-in max-w-2xl mx-auto space-y-10">
       <!-- Heading Section -->
-      <h1 class="text-7xl font-extrabold text-trashy uppercase tracking-wide">
-        <span class="ascii-text">Aditya's Trashyard</span>
+      <h1 class="text-7xl font-extrabold uppercase tracking-wide animate-text-glitch" style="font-family: 'Panic Stricken'">
+        Aditya's Trashyard
       </h1>
 
       <!-- Intro Section -->
-      <p class="text-lg font-bold text-gray-200 mb-8">Welcome to the dumpster!</p>
+      <p class="text-lg font-bold mb-8 animate-slide-up">Welcome to the dumpster!</p>
 
       <!-- Logos Section -->
       <div class="logos flex flex-wrap justify-center gap-8 mb-10">
-        <a class="logo-item group" href="https://youtube.com/@adityaredflag">
-          <i class="fab fa-youtube w-8 h-8 text-gray-500 group-hover:text-white"></i>
+        <a class="logo-item group animate-hover-scale" href="https://youtube.com/@adityaredflag">
+          <i class="fab fa-youtube w-8 h-8 text-white group-hover:text-gray-500"></i>
           <span class="hidden group-hover:inline-block text-white text-sm">YouTube</span>
         </a>
-        <a class="logo-item group" href="https://www.roblox.com/users/3507400125/profile">
-          <i class="fas fa-gamepad w-8 h-8 text-gray-500 group-hover:text-white"></i>
+        <a class="logo-item group animate-hover-scale" href="https://www.roblox.com/users/3507400125/profile">
+          <i class="fas fa-gamepad w-8 h-8 text-white group-hover:text-gray-500"></i>
           <span class="hidden group-hover:inline-block text-white text-sm">Roblox</span>
         </a>
-        <a class="logo-item group" href="https://twitter.com/adityaREDFLAG">
-          <i class="fab fa-twitter w-8 h-8 text-gray-500 group-hover:text-white"></i>
+        <a class="logo-item group animate-hover-scale" href="https://twitter.com/adityaREDFLAG">
+          <i class="fab fa-twitter w-8 h-8 text-white group-hover:text-gray-500"></i>
           <span class="hidden group-hover:inline-block text-white text-sm">Twitter</span>
         </a>
-        <a class="logo-item group" href="https://github.com/adityaREDFLAG">
-          <i class="fab fa-github w-8 h-8 text-gray-500 group-hover:text-white"></i>
+        <a class="logo-item group animate-hover-scale" href="https://github.com/adityaREDFLAG">
+          <i class="fab fa-github w-8 h-8 text-white group-hover:text-gray-500"></i>
           <span class="hidden group-hover:inline-block text-white text-sm">GitHub</span>
         </a>
-        <a class="logo-item group" href="https://discord.com/invite/N9KD7au6hB">
-          <i class="fab fa-discord w-8 h-8 text-gray-500 group-hover:text-white"></i>
+        <a class="logo-item group animate-hover-scale" href="https://discord.com/invite/N9KD7au6hB">
+          <i class="fab fa-discord w-8 h-8 text-white group-hover:text-gray-500"></i>
           <span class="hidden group-hover:inline-block text-white text-sm">Discord</span>
         </a>
-        <a class="logo-item group" href="https://www.instagram.com/noblixzy/">
-          <i class="fab fa-instagram w-8 h-8 text-gray-500 group-hover:text-white"></i>
+        <a class="logo-item group animate-hover-scale" href="https://www.instagram.com/noblixzy/">
+          <i class="fab fa-instagram w-8 h-8 text-white group-hover:text-gray-500"></i>
           <span class="hidden group-hover:inline-block text-white text-sm">Instagram</span>
         </a>
-        <a class="logo-item group" href="mailto:adi.redflag@gmail.com">
-          <i class="fas fa-envelope w-8 h-8 text-gray-500 group-hover:text-white"></i>
+        <a class="logo-item group animate-hover-scale" href="mailto:adi.redflag@gmail.com">
+          <i class="fas fa-envelope w-8 h-8 text-white group-hover:text-gray-500"></i>
           <span class="hidden group-hover:inline-block text-white text-sm">Mail</span>
         </a>
       </div>
 
       <!-- Spotify Player Section -->
-      <div class="mb-8">
+      <div class="mb-8 animate-slide-up">
         <iframe src="https://open.spotify.com/embed/track/5ovfCCeu5FtY6jf5Yk2huD?utm_source=generator"
           width="100%" height="80" frameBorder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
       </div>
 
       <!-- Easter Egg -->
-      <p id="easter-egg" class="text-green-400 hidden mt-4">You found the Easter egg! </p>
+      <p id="easter-egg" class="text-green-400 hidden mt-4 animate-bounce-in">You found the Easter egg! </p>
     </div>
   </main>
 
-   <!-- Font Awesome CDN Link -->
+  <!-- Font Awesome CDN Link -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <!-- Google Fonts Link for Panic Stricken font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Panic+Stricken&display=swap" rel="stylesheet">
 
-  <!-- ASCII Text Animation Styles -->
+  <!-- Animation Styles -->
   <style>
-    .ascii-text {
-      font-family: 'Monoton', cursive;
-      font-size: 48px;
-      text-shadow: 0 0 10px #ff69b4, 0 0 20px #ff69b4, 0 0 30px #ff69b4;
-      animation: ascii-text 2s ease infinite;
+    .animate-fade-in {
+      animation: fadeIn 1s ease-in-out;
     }
 
-    @keyframes ascii-text {
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(-20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .animate-slide-up {
+      animation: slideUp 1s ease-in-out;
+    }
+
+    @keyframes slideUp {
+      from {
+        transform: translateY(20px);
+        opacity: 0;
+      }
+      to {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+
+    .animate-hover-scale {
+      transition: transform 0.2s ease;
+    }
+
+    .animate-hover-scale:hover {
+      transform: scale(1.1);
+    }
+
+    .animate-text-glitch {
+      animation: textGlitch 2s ease infinite;
+    }
+
+    @keyframes textGlitch {
       0% {
-        text-shadow: 0 0 10px #ff69b4, 0 0 20px #ff69b4, 0 0 30px #ff69b4;
+        text-shadow: 0 0 10px #ff69b4;
       }
       50% {
-        text-shadow: 0 0 20px #ff69b4, 0 0 30px #ff69b4, 0 0 40px #ff69b4;
+        text-shadow: 0 0 20px #ff69b4;
       }
       100% {
-        text-shadow: 0 0 10px #ff69b4, 0 0 20px #ff69b4, 0 0 30px #ff69b4;
+        text-shadow: 0 0 10px #ff69b4;
+      }
+    }
+
+    .animate-bounce-in {
+      animation: bounceIn 1s ease-in-out;
+    }
+
+    @keyframes bounceIn {
+      from {
+        transform: scale(0.5);
+        opacity: 0;
+      }
+      to {
+        transform: scale(1);
+        opacity: 1;
       }
     }
   </style>
