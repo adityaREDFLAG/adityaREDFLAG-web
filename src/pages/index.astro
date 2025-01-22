@@ -7,7 +7,7 @@ import Layout from "../layouts/Layout.astro";
     <div class="text-center animate-fade-in max-w-2xl mx-auto space-y-10">
       <!-- Heading Section -->
       <h1 class="text-7xl font-extrabold text-trashy uppercase tracking-wide">
-        Aditya's Trashyard
+        <span class="ascii-text">Aditya's Trashyard</span>
       </h1>
 
       <!-- Intro Section -->
@@ -56,66 +56,28 @@ import Layout from "../layouts/Layout.astro";
     </div>
   </main>
 
-  <!-- Font Awesome CDN Link -->
+   <!-- Font Awesome CDN Link -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
-  <!-- Styling Section -->
+  <!-- ASCII Text Animation Styles -->
   <style>
-    /* Trashyard Background */
-    .bg-trashyard {
-      background-image: linear-gradient(to bottom, #4d4d4d, #2f2f2f);
-      background-size: 100% 300px;
-      background-position: 0% 100%;
-      animation: trashyard 10s ease infinite;
+    .ascii-text {
+      font-family: 'Monoton', cursive;
+      font-size: 48px;
+      text-shadow: 0 0 10px #ff69b4, 0 0 20px #ff69b4, 0 0 30px #ff69b4;
+      animation: ascii-text 2s ease infinite;
     }
 
-    @keyframes trashyard {
+    @keyframes ascii-text {
       0% {
-        background-position: 0% 100%;
+        text-shadow: 0 0 10px #ff69b4, 0 0 20px #ff69b4, 0 0 30px #ff69b4;
+      }
+      50% {
+        text-shadow: 0 0 20px #ff69b4, 0 0 30px #ff69b4, 0 0 40px #ff69b4;
       }
       100% {
-        background-position: 0% 0%;
+        text-shadow: 0 0 10px #ff69b4, 0 0 20px #ff69b4, 0 0 30px #ff69b4;
       }
-    }
-    /* Trashy Text */
-    .text-trashy {
-      text-shadow: 0 0 10px #ff69b4, 0 0 20px #ff69b4, 0 0 30px #ff69b4, 0 0 40px #ff69b4, 0 0 50px #ff69b4, 0 0 60px #ff69b4, 0 0 70px #ff69b4;
-      color: #ffffff;
-      font-family: 'Monoton', cursive;
-    }
-
-    /* Animations */
-    .animate-fade-in {
-      animation: fadeIn 1s ease-in-out;
-    }
-
-    @keyframes fadeIn {
-      from {
-        opacity: 0;
-        transform: translateY(-20px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    /* Logo Styles */
-    .logo-item {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      transition: transform 0.2s ease;
-    }
-
-    .logo-item:hover {
-      transform: scale(1.1);
-    }
-
-    /* Easter Egg Styles */
-    #easter-egg {
-      font-family: 'Monoton', cursive;
-      font-size: 24px;
     }
   </style>
 
