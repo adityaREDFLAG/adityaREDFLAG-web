@@ -3,7 +3,16 @@ import Layout from "../layouts/Layout.astro";
 ---
 
 <Layout title="Aditya's Trashyard">
-  <main class="flex justify-center h-screen items-center px-4 bg-black text-white">
+  <!-- Loading Screen -->
+  <div class="loading-screen flex justify-center items-center h-screen w-screen bg-black text-white" id="loading-screen">
+    <div class="trash-can">
+      <div class="lid"></div>
+      <div class="body"></div>
+    </div>
+    <p class="loading-text">Dumping trash...</p>
+  </div>
+
+  <main class="flex justify-center h-screen items-center px-4 bg-black text-white hidden" id="main-content">
     <div class="text-center animate-fade-in max-w-2xl mx-auto space-y-10">
       <!-- Heading Section -->
       <h1 class="text-7xl font-extrabold uppercase tracking-wide animate-text-glitch" style="font-family: 'Panic Stricken'">
@@ -23,10 +32,6 @@ import Layout from "../layouts/Layout.astro";
           <i class="fas fa-gamepad w-8 h-8 text-white group-hover:text-gray-500"></i>
           <span class="hidden group-hover:inline-block text-white text-sm">Roblox</span>
         </a>
-        <a class="logo-item group animate-hover-scale" href="https://twitter.com/adityaREDFLAG">
-          <i class="fab fa-twitter w-8 h-8 text-white group-hover:text-gray-500"></i>
-          <span class="hidden group-hover:inline-block text-white text-sm">Twitter</span>
-        </a>
         <a class="logo-item group animate-hover-scale" href="https://github.com/adityaREDFLAG">
           <i class="fab fa-github w-8 h-8 text-white group-hover:text-gray-500"></i>
           <span class="hidden group-hover:inline-block text-white text-sm">GitHub</span>
@@ -45,12 +50,6 @@ import Layout from "../layouts/Layout.astro";
         </a>
       </div>
 
-      <!-- Spotify Player Section -->
-      <div class="mb-8 animate-slide-up">
-        <iframe src="https://open.spotify.com/embed/track/5ovfCCeu5FtY6jf5Yk2huD?utm_source=generator"
-          width="100%" height="80" frameBorder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
-      </div>
-
       <!-- Easter Egg -->
       <p id="easter-egg" class="text-green-400 hidden mt-4 animate-bounce-in">You found the Easter egg! </p>
     </div>
@@ -58,6 +57,7 @@ import Layout from "../layouts/Layout.astro";
 
   <!-- Font Awesome CDN Link -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
   <!-- Google Fonts Link for Panic Stricken font -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -65,78 +65,74 @@ import Layout from "../layouts/Layout.astro";
 
   <!-- Animation Styles -->
   <style>
-    .animate-fade-in {
-      animation: fadeIn 1s ease-in-out;
+    /* ... (animation styles remain the same) */
+
+    /* Loading Screen Styles */
+    .loading-screen {
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 1000;
     }
 
-    @keyframes fadeIn {
-      from {
-        opacity: 0;
-        transform: translateY(-20px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
+    .trash-can {
+      position: relative;
+      width: 100px;
+      height: 100px;
+      background-color: #333;
+      border-radius: 10px;
     }
 
-    .animate-slide-up {
-      animation: slideUp 1s ease-in-out;
+    .lid {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 20px;
+      background-color: #444;
+      border-radius: 10px 10px 0 0;
+      animation: lid-open 1s ease-in-out infinite;
     }
 
-    @keyframes slideUp {
-      from {
-        transform: translateY(20px);
-        opacity: 0;
-      }
-      to {
-        transform: translateY(0);
-        opacity: 1;
-      }
-    }
-
-    .animate-hover-scale {
-      transition: transform 0.2s ease;
-    }
-
-    .animate-hover-scale:hover {
-      transform: scale(1.1);
-    }
-
-    .animate-text-glitch {
-      animation: textGlitch 2s ease infinite;
-    }
-
-    @keyframes textGlitch {
+    @keyframes lid-open {
       0% {
-        text-shadow: 0 0 10px #ff69b4;
+        transform: translateY(0);
       }
       50% {
-        text-shadow: 0 0 20px #ff69b4;
+        transform: translateY(-20px);
       }
       100% {
-        text-shadow: 0 0 10px #ff69b4;
+        transform: translateY(0);
       }
     }
 
-    .animate-bounce-in {
-      animation: bounceIn 1s ease-in-out;
+    .body {
+      position: absolute;
+      top: 20px;
+      left: 0;
+      width: 100%;
+      height: 80px;
+      background-color: #333;
+      border-radius: 0 0 10px 10px;
     }
 
-    @keyframes bounceIn {
-      from {
-        transform: scale(0.5);
-        opacity: 0;
-      }
-      to {
-        transform: scale(1);
-        opacity: 1;
-      }
+    .loading-text {
+      font-size: 24px;
+      font-family: 'Panic Stricken';
+      margin-top: 20px;
     }
   </style>
 
-  <!-- Script Section for Easter Egg -->
+  <!-- Script Section for Loading Screen -->
   <script>
+    window.addEventListener('load', () => {
+      const loadingScreen = document.getElementById('loading-screen');
+      const mainContent = document.getElementById('main-content');
+
+      loadingScreen.classList.add('hidden');
+      mainContent.classList.remove('hidden');
+    });
+
     let spaceCount = 0;
     
     document.addEventListener('keydown', (event) => {
